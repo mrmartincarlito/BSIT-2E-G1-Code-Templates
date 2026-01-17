@@ -1,0 +1,19 @@
+body {
+    background-color: lightgray;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    color:red;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  p {
+    color: green
+  }
+}
