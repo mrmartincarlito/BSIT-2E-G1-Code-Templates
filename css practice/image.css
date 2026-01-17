@@ -1,0 +1,24 @@
+body {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+h1:hover {
+    color: darkblue
+}
+
+.image-container {
+    width: 40%;
+    height: 400px;
+    overflow: hidden;
+    border: 5px solid #333;
+    border-radius: 8px;
+    cursor: pointer
+}

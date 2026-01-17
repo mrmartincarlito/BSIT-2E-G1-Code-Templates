@@ -1,0 +1,62 @@
+body {
+    background: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: steelblue;
+    color: white;
+
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.right {
+    animation-name: moveRight;
+}
+
+@keyframes moveRight {
+    from { margin-left: 0; }
+    to { margin-left: 50px; }
+}
+
+.left {
+    animation-name: moveLeft;
+}
+
+@keyframes moveLeft {
+    from { margin-left: 100px; }
+    to { margin-left: 0; }
+}
+
+.up {
+    animation-name: moveUp;
+}
+
+@keyframes moveUp {
+    from { margin-top: 100px; }
+    to { margin-top: 0; }
+}
+
+.down {
+    animation-name: moveDown;
+}
+
+@keyframes moveDown {
+    from { margin-top: 0; }
+    to { margin-top: 50px; }
+}
