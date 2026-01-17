@@ -1,0 +1,44 @@
+.testClass {
+    font-size: 100px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+.margin {
+    background: #ffcccc;
+    width: 100%;
+    height: 100%;
+    padding: 40px
+}
+
+.border {
+    background: #ff9900;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border: 8px solid #0000ff;
+}
+
+.padding {
+    background: #cce5ff;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.content {
+    background: #4da3ff;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 48px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
