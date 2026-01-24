@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Forms Practice</title>
+    </head>
+    <body>
+        <p id="notification"></p>
+        <label>Username</label>
+        <input id="username" type="text" placeholder="Username"/>
+        <br/ >
+        <label>Password</label>
+        <input id="password" type="password" placeholder="Password"/>
+        <br/ >
+        <button onclick="login()">Login</button>
+
+        <br />
+        <br />
+        <br/>
+        <label>Age</label>
+        <input type="number" placeholder="Age"/>
+        <br />
+        <label>Address</label>
+        <textarea></textarea>
+
+        <br />
+        <label>Gender</label>
+        <input type="radio" name="gender" value="male"/>
+        <label>Male</label>
+        <input type="radio" name="gender" value="female"/>
+        <label>Female</label>
+        <input type="radio" name="gender" value="gay"/>
+        <label>Gay</label>
+
+        <br />
+        <label>Hobbies</label> <br/>
+
+        <input type="checkbox" name="hobby" value="reading"/>
+        <label>Reading</label>
+        <input type="checkbox" name="hobby" value="traveling"/>
+        <label>Traveling</label>
+        <input type="checkbox" name="hobby" value="cooking"/>
+        <label>Cooking</label>
+
+        <br />
+        <label>Course</label>
+        <select id="course">
+            <option value="bsit">BSIT</option>
+            <option value="bse">BSE</option>
+            <option value="bscs">BSCS</option>
+        </select>
+        <br />
+        <button onclick="printValues()">Print Values</button>
+    </body>
+
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (username == "admin") {
+                if (password == "12345") {
+                    document.getElementById("notification").innerText = "Successfully Login"
+                
+                }
+            } else {
+                document.getElementById("notification").innerText = "Login Failed"
+                document.getElementById("notification").style.color = "red";
+                }    /**
+             * username = admin
+             * password = 12345
+             * */
+             
+        }
+
+        function printValues() {
+            let hobbies = document.querySelectorAll('input[name="hobby"]:checked');
+            //console.log(hobbies[1].value)
+
+            let gender = document.querySelector('input[name="gender"]:checked');
+            console.log(gender.value)
+
+            let courser = document.getElementById("course").value;
+            console.log(courser)
+        }   
+
+    </script>
+</html>
