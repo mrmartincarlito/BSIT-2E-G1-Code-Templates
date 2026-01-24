@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Events</h1>
+    <button onclick="clickedButton()">Click Me!</button>
+    <p onmouseover="over()" onmouseout="out()">Hi</p>
+
+    <br />
+    <button onclick="logout()">Logout</button>
+
+</body>
+<script>
+    function logout() {
+        let value = confirm("Are you sure you want to logout?");
+        if (value) {
+            let promptValue = prompt("Are you really sure you want to logout? Enter yes to continue");
+
+            if (promptValue === "yes"
+                || promptValue === "YES"
+                || promptValue === "Yes"
+                || promptValue === "yES"
+                || promptValue === "yeS"
+            ) {
+                alert("You have been logged out!");
+            } else {
+                alert("Logout cancelled.");
+            }
+        }
+    }
+    function clickedButton() {
+        console.log("Button was clicked!");
+
+        alert("Button was clicked!");
+    }
+
+    function over() {
+        console.log("Mouse is over the paragraph!");
+    }
+
+    function out() {
+        console.log("Mouse has left the paragraph!");
+    }
+
+
+
+    let x = 10;
+    calculateSum();
+    function calculateSum() {
+        for (let i = 1; i <= 5; i++) {
+            console.log(x + " + " + i + " = " + (x + i));
+            x = x + i;
+        }
+
+        console.log("New Sum value = " + x)
+    }
+</script>
+</html>
