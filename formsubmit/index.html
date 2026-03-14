@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Example</title>  
+</head>
+<body>
+    LOGIN PAGE <br /> <br />
+    <div>
+        <h3 id="message"></h3>
+    <label for="name">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <input type="button" onclick="submitForm()" value="Submit">
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+
+<script>
+    function submitForm() {
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        //nilagay lang natin lahat ng information na gusto natin ibato kay php through json
+        var formData = {
+            username: username,
+            password: password,
+            address : "123 Main St",
+            phone : "555-1234",
+            email: "exampl.com"
+        };
+
+        $.ajax({
+            url: 'login.php',//php file kung san ka ppunta or kung san yung process
+            type: 'POST',//method GET or POST
+            data: "formData=" + JSON.stringify(formData), //bbigay natin na json sa PHP kay login.php, maaccess sya through formData variable
+            success: function(response) {
+                var response = JSON.parse(response); //convert natin yun binigay ni php na json into js json
+                $("#message").html(response.message)
+            },
+            error: function() {
+                alert('An error occurred while submitting the form.');
+            }
+        });
+    }
+</script>
+</html>
